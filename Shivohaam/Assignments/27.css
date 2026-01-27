@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: #345333;
+    padding: 10px 20px;
+}
+
+.logo {
+    height: 40px;
+    margin-right: 20px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: green;
+}
+.body{
+    background: radial-gradient(circle,#e6e6ff,#f2f2f2,#ffe6ff, #ffffe6);
+
+}
+
+.body-content {
+    background: radial-gradient(circle,#e6e6ff,#f2f2f2,#ffe6ff, #ffffe6);
+
+}
+
+.table {
+    display: flex;
+    justify-content: center;
+    font-size: 19px;
+}
+
+.para {
+    font-family: Sans-Serif;
+    font-size: 20px;
+    color: white;
+    animation: color 3s infinite alternate;
+}
+
+@keyframes color {
+    0% {
+        color: red;
+    }
+
+    25% {
+        color: orange;
+    }
+
+    50% {
+        color: blue;
+    }
+
+    75% {
+        color: purple;
+    }
+
+    100% {
+        color: green;
+    }
+}
+
+@keyframes color {
+    0% {
+        background-color: red;
+    }
+
+    25% {
+        background-color: orange;
+    }
+
+    50% {
+        background-color: blue;
+    }
+
+    75% {
+        background-color: purple;
+    }
+
+    100% {
+        background-color: green;
+    }
+}
+
+.para1 {
+    font-family: Comic Sans MS;
+    font-size: 22px;
+}
+
+.out {
+    overflow-y: scroll;
+    height: 150px;
+
+    outline-style: dotted;
+}
+
+.but {
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 12px;
+    display: flex;
+    background-color: blue;
+    color: white;
+    font-size: 18px;
+    justify-content: center;
+}
+.h33{
+    font-family: Tahoma;
+    margin-left: 22px;
+    color: red;
+
+}
+.button{
+    display: flex;
+    margin-right: 52px;
+    justify-content: flex-end;
+}
+
+
+
+
+
+
+
