@@ -8,8 +8,6 @@ ele.addEventListener("click", () => {
     ele2.style.backgroundColor="#e6eeff"
     const head = document.getElementById("shiva");
     head.textContent="devRathod Online Classes";
-    const bod=document.getElementById("body");
-bod.style.background = "#ffe6f2";
 });
 const element = document.createElement("h3");
 element.textContent="Ambati Venkateswarlu";
