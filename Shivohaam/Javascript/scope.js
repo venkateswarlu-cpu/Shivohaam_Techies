@@ -66,14 +66,14 @@
  -> Function
  -> Block
 
- // with use Strict and without use Strict
+=> with use Strict and without use Strict
 without use Strict => when we fetch or find any variable value on global , which are not declare any so, it's automatically 
  declare and define the earlier value of the same variable in global reference 
  just for example
  area.global = "Alirajpur"  // occupy memroy on global and refer to global
 
 */
-
+// "use strict";
 // var -> Functional Scope
 // let & const -> Block Scope
 
@@ -88,9 +88,9 @@ function functionScope() {
 functionScope();
 
 // console.log(district); // ReferenceError: district is not defined
-
+let area;
 {
-  let area = "Shivohaam"; // block scope
+  area = "Shivohaam"; // block scope
   console.log(area);
 }
 
