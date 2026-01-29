@@ -1,5 +1,5 @@
-let name = "Shiva";
-console.log("Hello, " + name + "!");
+let name1= "Shiva";
+console.log("Hello, " + name1 + "!");
 
 let name = "Ambati Venkateswarlu  ";
 let email = "ambativenkateswarlu0@gmail.com";
