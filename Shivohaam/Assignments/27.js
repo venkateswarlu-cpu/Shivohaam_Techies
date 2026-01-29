@@ -23,5 +23,13 @@ head.style.marginLeft="22px";
 head.style.fontFamily="Pacifico";
 head.style.color="#8f00b3";
 
+const form = document.getElementById("studentForm");
+const studentList = document.getElementById("studentList");
+
+
+const name1 = document.getElementById("name");
+const email = document.getElementById("email");
+const course = document.getElementById("course");
+const age = document.getElementById("age");
 
 
