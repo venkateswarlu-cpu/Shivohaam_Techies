@@ -23,13 +23,48 @@ head.style.marginLeft="22px";
 head.style.fontFamily="Pacifico";
 head.style.color="#8f00b3";
 
-const form = document.getElementById("studentForm");
-const studentList = document.getElementById("studentList");
+
+document.getElementById("studentForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  let name = document.getElementById("name").value.trim();
+  let email = document.getElementById("email").value.trim();
+  let course = document.getElementById("course").value.trim();
+  let age = document.getElementById("age").value.trim();
+
+  let valid = true;
+
+  if ((name === "") || (name.length < 3)){
+      alert("Name is Required");
+      valid = false;
+  } 
+  if ((email === "") || ((!email.includes("@") || !email.includes(".com"))) ){
+    alert("Email is Not Valid");
+    valid = false;
+  }
+
+  if (course === "") {
+    alert("Course is Not Valid");
+    valid = false;
+  }
+
+  if ((age === "") || (parseInt(age)<18)){
+    alert("Age is Not Valid");
+    valid = false;
+  }
+
+  if (valid) {
+    let studentList = document.getElementById("studentList");
+    let entry = document.createElement("div");
+    entry.classList.add("entry");
+    entry.textContent = `Name: ${name} | Email: ${email} | Course: ${course} |  Age: ${age}`;
+    studentList.appendChild(entry);
+
+    document.getElementById("studentForm").reset();
+  }
+});
 
 
-const name1 = document.getElementById("name");
-const email = document.getElementById("email");
-const course = document.getElementById("course");
-const age = document.getElementById("age");
+
 
 
