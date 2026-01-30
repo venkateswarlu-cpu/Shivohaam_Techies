@@ -38,3 +38,8 @@ console.log(courseTitle);
 console.log(nameLength);
 console.log(shortName);
 console.log(sliceName);
+
+
+let a="Ambati";
+let b=a.split("").reverse().join("");
+console.log(b);
