@@ -144,9 +144,29 @@ console.log("Does b end with 'Sairam'?:", endsWithOmkar);
 // -> split() method
 // -> join() method (used with arrays)
 
-let csvData = "Shivohaam,25,Developer,India"; // Comma-separated values
-let splitData = csvData.split(","); // Using split() method to split string into an array
+// Split is used to split a string into an array of substrings based on a specified separator
+// -> split is a string method and return an array
+
+// basic format : let arrayName = yourString.split(separator , limit);
+
+let csvData = "Shivohaam-25-Developer-India"; // Comma-separated values
+let splitData = csvData.split("-"); // Using split() method to split string into an array
 console.log("Split data array:", splitData);
 
-let joinedData = splitData.join(" | "); // Using join() method to join array elements into a string
+// Join is used to join all elements of an array into a single string, with a specified separator
+
+// Join is an array method and return a string
+// basic format : let joinedString = yourArray.join(separator);
+
+let joinedData = splitData.join("-"); // Using join() method to join array elements into a string
 console.log("Joined data string:", joinedData);
+
+// reverse a string
+
+let originalString = "Shivohaam";
+
+let splitstr = originalString.split(""); // Split string into array of characters
+let reversedArray = splitstr.reverse(); // Reverse the array of characters
+let reversedString = reversedArray.join(""); // Join the reversed array back into a string
+
+console.log("Reversed string:", reversedString);
