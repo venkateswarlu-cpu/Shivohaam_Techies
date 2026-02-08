@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Calculator</title>
+    <link rel="stylesheet" href="Feb8.css">
+</head>
+<body>
+
+<div class="calculator">
+    <h2>JavaScript Calculator</h2>
+
+    <input type="text" id="num1" placeholder="Enter first number">
+    <input type="text" id="num2" placeholder="Enter second number">
+
+    <div class="buttons">
+        <button onclick="calculate('+')">+</button>
+        <button onclick="calculate('-')">−</button>
+        <button onclick="calculate('*')">×</button>
+        <button onclick="calculate('/')">÷</button>
+        <button onclick="calculate('%')">%</button>
+        <button onclick="calculate('**')">Power</button>
+        <button onclick="calculate('percent')">Percentage</button>
+    </div>
+
+    <div class="result" id="result"></div>
+    
+    <button class="clear-btn" onclick="clearCalculator()">Clear</button>
+
+</div>
+
+<script src="Feb8.js"></script>
+</body>
+</html>
