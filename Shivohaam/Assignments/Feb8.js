@@ -1,106 +1,81 @@
-var calculationCount = 0;
+let display = document.getElementById("display");
 
-function calculate(operator) {
-    let input1 = document.getElementById("num1").value;
-    let input2 = document.getElementById("num2").value;
+let currentValue = "";
+let previousValue = "";
+let operator = null;
 
+function add(value) {
+    if (value === "." && currentValue.includes(".")) return;
 
-    input1 = input1.trim().replace(/,/g, "");
-    input2 = input2.trim().replace(/,/g, "");
+    currentValue += value;
+    updateDisplay();
+}
 
-    if (input1 === "" || input2 === "") {
-        displayResult("Please enter both numbers.");
-        return;
+function soperator(op) {
+    if (currentValue === "") return;
+
+    if (previousValue !== "") {
+        calculate();
     }
 
-    if (isNaN(input1) || isNaN(input2)) {
-        displayResult("Invalid input. Enter numeric values only.");
-        return;
-    }
+    operator = op;
+    previousValue = currentValue;
+    currentValue = "";
 
-    const num1 = Number(input1);
-    const num2 = Number(input2);
+    updateDisplay();
+}
 
+function calculate() {
+    if (previousValue === "" || currentValue === "" || operator === null) return;
+
+    let num1 = Number(previousValue);
+    let num2 = Number(currentValue);
     let result;
-    
-    for (let i = 0; i < 1; i++) {
-        switch (operator) {
-            case "+":
-                result = add(num1, num2);
-                break;
-            case "-":
-                result = subtract(num1, num2);
-                break;
-            case "*":
-                result = multiply(num1, num2);
-                break;
-            case "/":
-                result = divide(num1, num2);
-                break;
-            case "%":
-                result = remainder(num1, num2);
-                break;
-            case "**":
-                result = power(num1, num2);
-                break;
-            case "percent":
-                result = percentage(num1, num2);
-                break;
-            default:
-                displayResult("Invalid operation.");
+
+    switch (operator) {
+        case "+":
+            result = num1 + num2;
+            break;
+        case "-":
+            result = num1 - num2;
+            break;
+        case "*":
+            result = num1 * num2;
+            break;
+        case "/":
+            if (num2 === 0) {
+                display.value = "Error";
+                resetCalculator();
                 return;
-        }
+            }
+            result = num1 / num2;
+            break;
+        case "%":
+            result = num1 % num2;
+            break;
     }
 
-    calculationCount++;
+    currentValue = result.toString();
+    previousValue = "";
+    operator = null;
 
-    displayResult(
-        "Result: " + result.toFixed(2) +
-        " | Calculations performed: " + calculationCount
-    );
+    updateDisplay();
 }
 
-function clearCalculator() {
-    document.getElementById("num1").value = "";
-    document.getElementById("num2").value = "";
-
-    document.getElementById("result").textContent = "";
+function updateDisplay() {
+    display.value =
+        previousValue +
+        (operator ? " " + operator + " " : "") +
+        currentValue;
 }
 
-
-function add(a, b) {
-    return a + b;
+function clearDisplay() {
+    resetCalculator();
+    display.value = "";
 }
 
-function subtract(a, b) {
-    return a - b;
-}
-
-function multiply(a, b) {
-    return a * b;
-}
-
-function divide(a, b) {
-    if (b === 0) {
-        displayResult("Error: Division by zero is not allowed.");
-        throw new Error("Division by zero");
-    }
-    return a / b;
-}
-
-function remainder(a, b) {
-    return a % b;
-}
-
-function power(a, b) {
-    return a ** b;
-}
-
-function percentage(a, b) {
-    return (a / 100) * b;
-}
-
-function displayResult(message) {
-    message = message.toString().trim();
-    document.getElementById("result").textContent = message;
+function resetCalculator() {
+    currentValue = "";
+    previousValue = "";
+    operator = null;
 }

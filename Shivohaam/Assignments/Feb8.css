@@ -1,61 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f2f2f2;
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    padding: 20px;
 }
 
 .calculator {
-    background-color: #80ffaa;
-    max-width: 400px;
-    margin: auto;
+    background: #80ffaa;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 12px;
+    width: 260px;
 }
 
-input {
+#display {
     width: 100%;
-    padding: 8px;
-    margin-top: 10px;
-    border-radius: 10px;
-    font-size: 14px;
+    height: 50px;
+    font-size: 22px;
+    text-align: right;
+    margin-bottom: 10px;
+    padding-right: 10px;
+    border-radius: 8px;
+    border: none;
 }
 
 .buttons {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    margin-top: 15px;
-    border-radius: 20px;
 }
 
 button {
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 20px;
-}
-
-.clear-btn {
-    width: 100%;
-    margin-top: 10px;
-    padding: 10px;
-    font-size: 15px;
-    background-color: #ff4d4d;
-    color: white;
+    height: 55px;
+    font-size: 18px;
+    border-radius: 10px;
     border: none;
+    width: 57px;
     cursor: pointer;
-    border-radius: 8px;
 }
 
-.clear-btn:hover {
-    background-color: #e60000;
+button:hover {
+    background-color: #c8ffd4;
+}
+h1{
+    color: white;
+}
+.zero {
+    grid-column: span 2;
 }
 
-
-.result {
-    margin-top: 15px;
+label{
+    display: block;
+    margin-bottom: 10px;
     font-weight: bold;
-}
-.result span {
-    color: #333;
+    color: #000000;
 }

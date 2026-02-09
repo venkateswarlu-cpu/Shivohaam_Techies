@@ -3,31 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Calculator</title>
+    <title>Calculator</title>
     <link rel="stylesheet" href="Feb8.css">
 </head>
 <body>
 
 <div class="calculator">
-    <h2>JavaScript Calculator</h2>
+    <label for="display" class="display-label">Js Calculator</label>
 
-    <input type="text" id="num1" placeholder="Enter first number">
-    <input type="text" id="num2" placeholder="Enter second number">
+    <input type="text" id="display" disabled>
+
 
     <div class="buttons">
-        <button onclick="calculate('+')">+</button>
-        <button onclick="calculate('-')">−</button>
-        <button onclick="calculate('*')">×</button>
-        <button onclick="calculate('/')">÷</button>
-        <button onclick="calculate('%')">%</button>
-        <button onclick="calculate('**')">Power</button>
-        <button onclick="calculate('percent')">Percentage</button>
+        <button onclick="add('1')">1</button>
+        <button onclick="add('2')">2</button>
+        <button onclick="add('3')">3</button>
+        <button onclick="calculate()">=</button>
+        
+        <button onclick="add('4')">4</button>
+        <button onclick="add('5')">5</button>
+        <button onclick="add('6')">6</button>
+        <button onclick="soperator('+')">+</button>
+        
+        <button onclick="add('7')">7</button>
+        <button onclick="add('8')">8</button>
+        <button onclick="add('9')">9</button>
+        <button onclick="soperator('-')">−</button>
+
+        <button onclick="clearDisplay()">Clear</button>
+        <button onclick="soperator('-')">−</button>
+        <button onclick="soperator('%')">%</button>
+        <button onclick="soperator('/')">÷</button>
+        <button onclick="soperator('*')">×</button>
+        
+        
+        <button class="zero" onclick="append('0')">0</button>
+        <button onclick="append('.')">.</button>
     </div>
-
-    <div class="result" id="result"></div>
-    
-    <button class="clear-btn" onclick="clearCalculator()">Clear</button>
-
 </div>
 
 <script src="Feb8.js"></script>
