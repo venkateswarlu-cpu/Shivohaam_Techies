@@ -1,17 +1,35 @@
 let display = document.getElementById("display");
+let display1 = document.getElementById("display1");
 
 let currentValue = "";
 let previousValue = "";
 let operator = null;
+let rawInput = "";
+let isInvalid = false;
+
+let inputLength = 0;      
+const max_len = 25;
 
 function add(value) {
+    if (isInvalid) return;
+
     if (value === "." && currentValue.includes(".")) return;
 
+    if (inputLength >= max_len) {
+        setInvalid();
+        return;
+    }
+
     currentValue += value;
+    rawInput += value;
+    inputLength++;
+
+    display1.value = rawInput;
     updateDisplay();
 }
 
 function soperator(op) {
+    if (isInvalid) return;
     if (currentValue === "") return;
 
     if (previousValue !== "") {
@@ -22,10 +40,14 @@ function soperator(op) {
     previousValue = currentValue;
     currentValue = "";
 
+    rawInput += " " + op + " ";
+    display1.value = rawInput;
+
     updateDisplay();
 }
 
 function calculate() {
+    if (isInvalid) return;
     if (previousValue === "" || currentValue === "" || operator === null) return;
 
     let num1 = Number(previousValue);
@@ -33,26 +55,17 @@ function calculate() {
     let result;
 
     switch (operator) {
-        case "+":
-            result = num1 + num2;
-            break;
-        case "-":
-            result = num1 - num2;
-            break;
-        case "*":
-            result = num1 * num2;
-            break;
+        case "+": result = num1 + num2; break;
+        case "-": result = num1 - num2; break;
+        case "*": result = num1 * num2; break;
         case "/":
             if (num2 === 0) {
-                display.value = "Error";
-                resetCalculator();
+                setInvalid();
                 return;
             }
             result = num1 / num2;
             break;
-        case "%":
-            result = num1 % num2;
-            break;
+        case "%": result = num1 % num2; break;
     }
 
     currentValue = result.toString();
@@ -69,9 +82,19 @@ function updateDisplay() {
         currentValue;
 }
 
+function setInvalid() {
+    display.value = "Invalid";
+    display1.value = "Invalid";
+    isInvalid = true;
+}
+
 function clearDisplay() {
     resetCalculator();
     display.value = "";
+    display1.value = "";
+    rawInput = "";
+    inputLength = 0;
+    isInvalid = false;
 }
 
 function resetCalculator() {
