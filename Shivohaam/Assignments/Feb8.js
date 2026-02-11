@@ -13,8 +13,6 @@ const max_len = 25;
 function add(value) {
     if (isInvalid) return;
 
-    if (value === "." && currentValue.includes(".")) return;
-
     if (inputLength >= max_len) {
         setInvalid();
         return;
@@ -102,3 +100,34 @@ function resetCalculator() {
     previousValue = "";
     operator = null;
 }
+function backspace() {
+    if (isInvalid) return;
+    if (rawInput.length === 0) return;
+
+    let chars = rawInput.split("");
+    let char =currentValue.split("");
+
+    let newArr = [];
+    for (let i = 0; i < chars.length - 1; i++) {
+        newArr.unshift(chars[i]);
+    }
+    newArr.reverse();
+    
+    let newArr1 = [];
+    for (let i = 0; i < chars.length - 1; i++) {
+        newArr1.unshift(chars[i]);
+    }
+    
+
+    rawInput = newArr.join("");
+    currentValue=newArr.join("");
+    display1.value = rawInput;
+    display1.value=currentValue;
+
+    updateDisplay();
+}
+
+
+
+
+
