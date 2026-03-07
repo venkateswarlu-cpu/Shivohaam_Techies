@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Calculator</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="calculator-container">
+      <div class="calculator">
+        <!-- Display Screen -->
+        <div class="display">
+          <div class="history" id="history"></div>
+          <div class="dial" id="dial">0</div>
+        </div>
+
+        <!-- Calculator Buttons -->
+        <div class="buttons">
+          <!-- First Row -->
+          <button class="btn btn-clear" onclick="clearAll()">C</button>
+          <button class="btn btn-backspace" onclick="backspace()">⌫</button>
+          <button class="btn btn-operator" onclick="appendOperator('%')">
+            %
+          </button>
+          <button class="btn btn-operator" onclick="appendOperator('/')">
+            ÷
+          </button>
+
+          <!-- Second Row -->
+          <button class="btn btn-number" onclick="appendNumber('7')">7</button>
+          <button class="btn btn-number" onclick="appendNumber('8')">8</button>
+          <button class="btn btn-number" onclick="appendNumber('9')">9</button>
+          <button class="btn btn-operator" onclick="appendOperator('*')">
+            ×
+          </button>
+
+          <!-- Third Row -->
+          <button class="btn btn-number" onclick="appendNumber('4')">4</button>
+          <button class="btn btn-number" onclick="appendNumber('5')">5</button>
+          <button class="btn btn-number" onclick="appendNumber('6')">6</button>
+          <button class="btn btn-operator" onclick="appendOperator('-')">
+            −
+          </button>
+
+          <!-- Fourth Row -->
+          <button class="btn btn-number" onclick="appendNumber('1')">1</button>
+          <button class="btn btn-number" onclick="appendNumber('2')">2</button>
+          <button class="btn btn-number" onclick="appendNumber('3')">3</button>
+          <button class="btn btn-operator" onclick="appendOperator('+')">
+            +
+          </button>
+
+          <!-- Fifth Row -->
+          <button class="btn btn-number btn-zero" onclick="appendNumber('0')">
+            0
+          </button>
+          <button class="btn btn-number" onclick="appendDecimal()">.</button>
+          <button class="btn btn-equals" onclick="calculate()">=</button>
+
+          <!-- Advanced Operations Row -->
+          <button class="btn btn-advanced" onclick="appendOperator('^')">
+            x^y
+          </button>
+          <button class="btn btn-advanced" onclick="square()">x²</button>
+          <button class="btn btn-advanced" onclick="sqrt()">√</button>
+          <button class="btn btn-advanced" onclick="reciprocal()">1/x</button>
+        </div>
+      </div>
+
+      <!-- Calculation History Panel -->
+      <div class="history-panel">
+        <h3>Calculation History</h3>
+        <div id="historyList" class="history-list"></div>
+        <button class="btn btn-clear-history" onclick="clearHistory()">
+          Clear History
+        </button>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -19,6 +19,9 @@ there are 7 primitive data types in JavaScript:
 -> Object
 -> Array
 -> Function
+-> Date
+-> Map/Set 
+etc.
 
 Descriptions of Primitive Data Types:
 String : A sequence of characters used to represent text.

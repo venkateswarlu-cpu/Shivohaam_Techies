@@ -156,3 +156,58 @@ function factorial(n) {
   }
   return n * factorial(n - 1); // Recursive case: n! = n * (n-1)!
 }
+
+// functions properties or concepts
+
+// parameters and arguments
+// default parameters
+// rest parameters
+// callback functions
+
+// Basic syntax of a user-defined function:
+//  function functionName(parameters) {
+//     // function body
+//     // code to be executed
+//     return value; // optional
+// }
+
+function addition(a, b) {
+  return a + b;
+}
+
+addition(4, 5);
+
+// function -> keyword
+// addition -> name of function
+// a,b -> parameters of function
+// parmeters -> when we declare any parmeteric function so , passed in function paranthesis only use on at the time of declration of function , immutable
+// 4,5 -> arguments of function
+// arguments -> when we invoke or call any parametric function so, passed in invokation , only use on when we invoke the function , mutable
+// return -> keyword to return value
+
+function defaultAddition(a = 1, b = 3) {
+  return a + b;
+}
+
+defaultAddition();
+defaultAddition(4, 5);
+
+// default parameters -> 1,3
+// 4,5 -> arguments of function
+// default parameters => when we declare any function with default values of parametyers so this function is also known as default partametric function and these parameteres re known as default parameters
+
+// rest parameters is also represented by ... but it is used to collect multiple elements into a single array
+function sum(...numbers) {
+  return numbers.reduce((acc, curr) => acc + curr, 0);
+}
+console.log("Rest Operator: ", sum(1, 2, 3, 4, 5)); // returns 15
+
+// 1, 2, 3, 4, 5 -> rest parametrs
+
+// Advance Js =>
+// Higher order function
+// first class/order function
+// callback function
+
+// Higher order functions (map, filter, reduce) // mostly
+// when an function is taking another function as an argument so, that function is called Higher order function and the argument function is known as callback fun ction for that higher order function.
