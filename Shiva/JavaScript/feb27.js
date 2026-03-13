@@ -18,5 +18,11 @@ const sum = numbers.reduce((sum, currentValue) => sum + currentValue, 0);
 
 console.log(sum);
 
-const result=numbers.filter(num => num %2==0).map(num => num*num).reduce((sum, currentValue) => sum + currentValue, 0);
+const arr=['j','a','v','a','s','c','r','i','p','t',];
+
+const result=arr.reduce((accumulator, currentValue) => accumulator + currentValue, '');
+
 console.log(result);
+
+//const result=numbers.filter(num => num %2==0).map(num => num*num).reduce((sum, currentValue) => sum + currentValue, 0);
+//console.log(result);
