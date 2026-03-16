@@ -85,3 +85,8 @@ function greet() {
   // Function
   console.log("Hello, World!");
 }
+
+// Advance Js =>
+// Non privities Datatypes with concepts
+// pass by value pass by referene (deep copy and shallow copy)
+// Objects

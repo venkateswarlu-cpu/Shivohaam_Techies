@@ -214,3 +214,8 @@ function sumWithoutRest() {
 }
 
 console.log("Without Rest Operator: ", sumWithoutRest(1, 2, 3, 4, 5)); // returns 15
+
+// Advance Javascript =>
+
+// Null ??
+// ?.
